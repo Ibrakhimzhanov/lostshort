@@ -8,9 +8,21 @@ body
   +text-color
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: greyscale;
+ul 
+  margin: 0
+  padding: 0
+ul > li 
+  list-style: none
+a 
+  text-decoration: none
+  color: #fff
+
 .wrapper 
   overflow: hidden
   min-width: 1310px
+.container
+  margin: 0 auto
+  width: 1300px
 .hero 
   height: 100vh
   min-height: 650px
@@ -68,3 +80,177 @@ body
       color: #ffbc2f;
     &:nth-child(2n)
       margin-left: 8px
+// !----- hero -----!
+
+// !----- products -----!
+
+.filter
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-bottom: 103px
+  &__item 
+    margin-right: 35px
+    &:last-child
+    margin-right: 0
+    &--active .filter__link
+      color: #ffc92f
+      background: #1b1b1b 
+  &__link
+    padding: 5px 21px 2px 21px
+    display: inline-block
+    text-decoration: none
+    text-transform: uppercase
+    color: #1b1b1b
+    +yanone
+    font-size: 24px
+    &:hover
+      color: #d82727
+.products 
+  padding: 130px 0 184px
+  &__item
+    width: 301px
+    height: 386px
+    background: #ffc92f
+    margin-bottom: 30px
+    margin-right: 27px
+    position: relative
+    cursor: pointer
+    &--color-black
+      background-color: #232323
+      & .products__price
+        border-bottom-color: #ffc92f
+    &--size-double
+      width: 631px
+      height: 544px
+      & .products__price-amount
+        color: #212121
+    &:hover .products__desc
+      transform: translateY(0%)
+    &:hover .products__price
+     display: block
+     transition: all .3
+     
+  &__list
+    display: flex
+    flex-wrap: wrap
+    margin-right: -27px
+  &__price-emplu
+      overflow: hidden
+  &__price
+    position: absolute
+    left: -9px
+    top: 17px
+    width: 126px
+    border-bottom: 45px solid #232323
+    border-right: 2px solid transparent
+    border-left: 5px solid transparent
+    transform: rotate(-181deg)
+    display: none
+    &-amount
+      color: #fcf5e6
+      transform: rotate(-181deg)
+      +yanoneBold
+      font-size: 30px
+      position: absolute
+      top: 5px
+      right: 28px
+      left: 0
+  &__content
+     height: 100%
+     display: flex
+     align-items: center
+     justify-content: center
+     position: relative
+     overflow: hidden
+  &__img 
+    display: block
+    max-width: 90%
+    max-height: 90%
+  &__desc
+    display: flex
+    flex-direction: column
+    align-items: center
+    position: absolute
+    bottom: 0
+    right: 0
+    left: 0
+    padding: 30px 35px 20px 35px
+    background: rgba(35, 35, 35, .8)
+    color: #fff
+    font-size: 15px
+    +roboto
+    transform: translateY(100%)
+    transition: transform  .3
+    &-text
+      text-align: center
+      margin-bottom: 18px
+.btn 
+  text-transform: uppercase
+  +yanone
+  padding: 7px 27px
+  background: #000
+  color: #ffc92f
+  display: inline-block
+  font-size: 24px
+  &:hover
+    background: #d82727
+    color: #fff
+// !---- products ----!
+
+// !---- collection ----!
+.collections 
+  padding-bottom: 145px
+  &__list 
+    display: flex
+  &__item 
+    min-height: 474px
+    flex: 1;
+    overflow: hidden
+    margin-right: 30px
+    background: url('/img/bg/pattern.png') center center / 500px
+    position: relative
+    &:last-child
+      margin-right: 0
+    &:before
+      content: ''
+      position: absolute
+      display: block
+      height: 176%
+      width: 60%
+      top: -17%
+      left: -18%
+      background: center center / contain no-repeat
+    &--type-male:before
+      content: ''
+      background-image: url('/img/collections/collection_man.png') 
+    &--type-female:before
+      content: ''
+      background-image: url('/img/collections/collection_woman.png')
+      top: -31%
+      width: 80%
+      left: -25%  
+  &__link 
+    position: relative
+    height: 100%
+    box-sizing: border-box
+    display: block
+    padding: 74px 13% 74px 44%
+    color: inherit
+    font-size: 15px
+    &:hover .btn 
+      background: #d82727
+      color: #fff
+  &__title
+    font-size: 70px 
+    +yanoneBold
+    padding: 0
+    margin-top: 0
+    margin-bottom: 11px
+    line-height: 1
+    text-transform: uppercase
+  &__desc
+    margin-bottom: 30px
+    color: #1b1b1b 
+.products__price-emplu 
+  overflow: hidden
